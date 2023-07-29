@@ -1,30 +1,57 @@
-<form>
-    <!-- Name input -->
-    <div class="form-outline mb-4">
-      <input type="text" id="form4Example1" class="form-control" />
-      <label class="form-label" for="form4Example1">Name</label>
+<div class="col-7 m-auto m-10 bg-body-secondary ">
+    <form (submit)="OnSubmit()" class="col-6 m-auto py-5 align-items-center h6" #contactForm>
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form4Example1">Nome</label>
+            <input type="text" id="form4Example1" class="form-control" #inputName/>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <label class="form-label " for="form4Example2">E-mail</label>
+            <input type="email" id="form4Example2" class="form-control" placeholder="seuEmail@email.com" name="email" #inputEmail />
+        </div>
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form4Example3">Mensagem</label>
+            <textarea class="form-control" id="form4Example3" rows="4"
+                placeholder="Digite sua mensagem aqui" name="textBox" #textArea></textarea>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked name="checkBox"/>
+            <label class="form-check-label" for="form4Example4">
+                Quero receber uma cópia dessa mensagem
+            </label>
+        </div>
+
+        <div class="justify-content-center d-flex">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-8" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Enviar 
+            </button>
+
+            <!-- Modal -->
+        </div>
+    </form>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Obrigado por entrar em contato</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span>Sua mensagem foi enviada com sucesso!</span>
+                    <br>
+                    <span>Em breve o time responsável entrará em contato</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="OnClose()">Fechar</button>
+                </div>
+            </div>
+        </div>
     </div>
-  
-    <!-- Email input -->
-    <div class="form-outline mb-4">
-      <input type="email" id="form4Example2" class="form-control" />
-      <label class="form-label" for="form4Example2">Email address</label>
-    </div>
-  
-    <!-- Message input -->
-    <div class="form-outline mb-4">
-      <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-      <label class="form-label" for="form4Example3">Message</label>
-    </div>
-  
-    <!-- Checkbox -->
-    <div class="form-check d-flex justify-content-center mb-4">
-      <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked />
-      <label class="form-check-label" for="form4Example4">
-        Send me a copy of this message
-      </label>
-    </div>
-  
-    <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
-  </form>
+</div>
