@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ContacUsComponent } from './contac-us/contac-us.component';
 import { HeaderComponent } from './header/header.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
+import { ShoppingItemsComponent } from './shopping-items/shopping-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContacUsComponent,
     HeaderComponent,
-    VitrineComponent
+    VitrineComponent,
+    ShoppingItemsComponent,
   ],
   imports: [
     BrowserModule,
